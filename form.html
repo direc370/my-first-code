@@ -1,12 +1,51 @@
 <!DOCTYPE html>
+<!-- 整个页面从 <html> 开始，所有内容都在它肚子里 -->
 <html>
   <head>
+    <!-- head 是"档案室"：给浏览器看的，页面上不显示 -->
     <title>竞赛组队登记</title>
   </head>
   <body>
+    <!-- body 是"客厅"：访客看到的一切都在这里 -->
+
     <h1>竞赛组队需求登记</h1>
-    <p>这里以后是登记表单。</p>
-    </b<h2>填写说明</h2>
-    <p>请队长如实填写队伍信息，我们会尽快帮你匹配队友。</p>
+    <p>请队长如实填写，我们会尽快帮你匹配队友。</p>
+
+    <!-- form：一张申请表，所有填空控件都装在它里面。
+         收数据时靠每个控件的 name 属性对号入座 -->
+    <form>
+      <!-- 文本输入框：type="text" 单行文字，placeholder 是灰色提示语 -->
+      <label>你的姓名：</label>
+      <input type="text" name="studentName" placeholder="例如：张三">
+      <br><br>
+
+      <!-- 下拉框：select 是"选择题"，option 是每个选项 -->
+      <label>年级：</label>
+      <select name="grade">
+        <option>大一</option>
+        <option>大二</option>
+        <option>大三</option>
+        <option>大四</option>
+      </select>
+      <br><br>
+
+      <!-- 第二个下拉框：注意 name 不同（grade vs track），收数据时靠它区分 -->
+      <label>想参加的竞赛方向：</label>
+      <select name="track">
+        <option>程序设计/算法</option>
+        <option>数学建模</option>
+        <option>电子设计</option>
+        <option>创新创业（大创/挑战杯）</option>
+      </select>
+      <br><br>
+
+      <!-- 多行文字区：rows 行数，cols 列数 -->
+      <label>自我介绍 / 想说的话：</label><br>
+      <textarea name="intro" rows="4" cols="40" placeholder="会什么技能、每周能投入多少时间……"></textarea>
+      <br><br>
+
+      <!-- 提交按钮：type="submit" 表示"交表" -->
+      <button type="submit">提交登记</button>
+    </form>
   </body>
 </html>
